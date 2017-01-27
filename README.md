@@ -1,20 +1,22 @@
-#Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+## React Demonstration project
 
-#Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+A baseline project with a series of tasks to increase familiarity with React technology, specifically:
 
-#Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+* Stateful components
+* TSX markup and `render()`
+* Component lifecycle:
+  * `componentDidMount()`
+  * `componentShouldUpdate()` / `componentWillUpdate()`
+  * `componentWillUnmount()`
 
-#Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Installation
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+1. Clone the repository
+2. In the root directory, execute `npm install`
+3. To build and run the project, execute `npm run start`
+
+## Goals
+
+1. To create components that respond to changes in state
+2. To enact changes of state from user input
+3. To enact changes of state from external events
