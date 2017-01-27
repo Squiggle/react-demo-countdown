@@ -1,6 +1,15 @@
-import * as React from 'react'  
-import * as ReactDOM from 'react-dom'
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { loadTheme } from '@microsoft/load-themed-styles';
 
-const HelloWorld = _ => <h1>Hello, world!</h1>
+import '../styles/App.scss';
 
-ReactDOM.render(<HelloWorld />, document.getElementById('content'))
+const App = () =>
+  <div className='app ms-font-su'>
+    <h1>Hello, World!</h1>
+  </div>
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('content')
+);

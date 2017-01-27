@@ -1,8 +1,8 @@
-var path = require('path')  
-var webpack = require('webpack')  
+var path = require('path')
+var webpack = require('webpack')
 var BundleTracker = require('webpack-bundle-tracker')
 
-module.exports = {  
+module.exports = {
   context: __dirname,
   entry: { main: ['./src/js/index.tsx'] },
   output: {
@@ -19,7 +19,8 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.tsx?$/, loader: 'ts-loader' }
+      { test: /\.tsx?$/, loader: 'ts-loader' },
+      { test: /\.scss$/, loaders: [ 'style', 'css', 'sass' ]}
     ],
 
     preLoaders: [
