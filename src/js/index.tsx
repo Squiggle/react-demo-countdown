@@ -4,9 +4,11 @@ import { loadTheme } from '@microsoft/load-themed-styles';
 
 import '../styles/App.scss';
 
+import Countdown from './Countdown';
+
 const App = () =>
   <div className='app ms-font-su'>
-    <h1>Hello, World!</h1>
+    <Countdown />
   </div>
 
 ReactDOM.render(

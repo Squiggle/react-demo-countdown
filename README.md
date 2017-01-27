@@ -41,6 +41,14 @@ npm packages:
 * `css-loader` css loads the css files
 * `style-loader` bundles the css to inline stylesheets
 
+### Create a component
+
+We'll create a component that counts down from 5 seconds to zero.
+
+During the countdown it will display the number of seconds remaining.
+
+Once complete, it will render some text.
+
 ## Further reading
 
 [React Component lifecycle](https://facebook.github.io/react/docs/react-component.html)
