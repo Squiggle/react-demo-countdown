@@ -1,20 +1,59 @@
-#Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+## React Demonstration project
 
-#Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+A baseline project using React, TypeScript 2.x and Webpack
+The goal is to expand on this project with a series of tasks designed to increase familiarity with React technology, specifically:
 
-#Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+* Webpack
+* Stateful components
+* TSX markup and `render()`
+* Component lifecycle:
+  * `componentDidMount()`
+  * `componentShouldUpdate()` / `componentWillUpdate()`
+  * `componentWillUnmount()`
 
-#Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Installation
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+1. Clone the repository
+2. In the root directory, execute `npm install`
+3. To build and run the project, execute `npm run start`
+
+## Goals
+
+1. Update the Webpack configuration to load scss files
+2. Create our first component to display the result of a service call
+3. To enact changes of state from user input
+4. To enact changes of state from external events
+
+### Update Webpack
+
+When running `npm run start` you will see errors importing a `.scss` file.
+Webpack does not know how to compile and package this file. We need to add a loader.
+
+In `webpack.config.js`, uncomment the line which adds `scss` to the file loaders:
+
+```
+{ test: /\.scss$/, loaders: [ 'style', 'css', 'sass' ]}
+```
+
+Note: in this case, the loaders 'style', 'css' and 'sass' relate to different
+npm packages:
+* `sass-loader` converts scss to css
+* `css-loader` css loads the css files
+* `style-loader` bundles the css to inline stylesheets
+
+### Component state
+
+We'll create a component that counts down from 5 seconds to zero.
+
+During the countdown it will display the number of seconds remaining.
+
+The `render()` method returns the appropriate markup based on the state:
+
+* If the timer is still counting, display the countdown
+* If the timer has completed, display some text
+
+## Further reading
+
+[React Component lifecycle](https://facebook.github.io/react/docs/react-component.html)
+
+[Introduction to Webpack](https://webpack.js.org/concepts/)
