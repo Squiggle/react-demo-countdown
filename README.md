@@ -41,13 +41,16 @@ npm packages:
 * `css-loader` css loads the css files
 * `style-loader` bundles the css to inline stylesheets
 
-### Create a component
+### Component state
 
 We'll create a component that counts down from 5 seconds to zero.
 
 During the countdown it will display the number of seconds remaining.
 
-Once complete, it will render some text.
+The `render()` method returns the appropriate markup based on the state:
+
+* If the timer is still counting, display the countdown
+* If the timer has completed, display some text
 
 ## Further reading
 

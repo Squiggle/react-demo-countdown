@@ -1,21 +1,24 @@
 import * as React from 'react';
 import * as Rx from 'rxjs';
 
-interface CountdownState {
-  TimeRemaining?: number;
-  Active: boolean;
+interface CountdownProps {
+  from: number;
 }
 
-class Countdown extends React.Component<any, CountdownState> {
+interface CountdownState {
+  timeRemaining?: number;
+  active: boolean;
+}
 
-  private readonly seconds: number = 5;
+class Countdown extends React.Component<CountdownProps, CountdownState> {
+
   private timerSubscription : Rx.Subscription;
 
   constructor(props: any) {
     super(props);
     this.state = {
-      TimeRemaining: this.seconds,
-      Active: false
+      timeRemaining: this.props.from,
+      active: false
     };
   }
 
@@ -25,7 +28,7 @@ class Countdown extends React.Component<any, CountdownState> {
     const observable = Rx.Observable
       .interval(1000) // every second
       .timeInterval()  // take the time intervale
-      .take(this.seconds) // up to a maximum of [seconds]
+      .take(this.props.from) // up to a maximum of [seconds]
 
     // subscribe to this observable
     var timerSubscription = observable
@@ -42,22 +45,24 @@ class Countdown extends React.Component<any, CountdownState> {
     }
   }
 
-  tick(timeElapsed: Rx.TimeInterval<number>) {
+  tick = (timeElapsed: Rx.TimeInterval<number>) => {
     this.setState({
-      Active: false,
-      TimeRemaining: this.seconds - timeElapsed.value - 1
+      active: false,
+      timeRemaining: this.props.from - timeElapsed.value - 1
     });
   }
 
-  timerComplete() {
+  timerComplete = () => {
+    this.setState({
+      active: true
+    });
   }
 
   render() {
     return <div className='countdown'>
-      { !this.state.Active && <h2>Countdown: { this.state.TimeRemaining }</h2> }
-      { this.state.Active && <h2>Complete!</h2> }
+      { !this.state.active && <h2>{ this.state.timeRemaining }</h2> }
+      { this.state.active && this.props.children }
     </div>
-
   }
 }
 

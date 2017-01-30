@@ -8,7 +8,9 @@ import Countdown from './Countdown';
 
 const App = () =>
   <div className='app ms-font-su'>
-    <Countdown />
+    <Countdown from={10}>
+      <h2>Ta-dah!</h2>
+    </Countdown>
   </div>
 
 ReactDOM.render(
