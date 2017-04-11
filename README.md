@@ -11,7 +11,17 @@ The goal is to expand on this project with a series of tasks designed to increas
   * `componentShouldUpdate()` / `componentWillUpdate()`
   * `componentWillUnmount()`
 
-## Installation
+### Installation
+
+1. Clone this repository
+2. `npm install` to install npm dependencies
+3. `npm run start` to build and run locally
+
+## How this project was created
+
+Note: from here on is a guide to replicate this functionality.
+
+### Installation
 
 Prerequisites:
 
