@@ -86,13 +86,15 @@ export default Countdown;
 
 Import this component `import Countdown from './Countdown';`
 
+_note: if you are seeing type errors, you may need to install the typings for React: `npm install --save-dev @types/react`_
+
 ### Component state
 
 We'll make this component count down from 5 seconds to zero.
 
 Give the component some state:
 
-Import reactive extensions (using `npm install --save rxjs` if necessary):
+Import reactive extensions (using `npm install --save rxjs` if necessary - and `npm install --save-dev @types/rxjs` for the typings):
 
 ```
 import * as Rx from 'rxjs';
